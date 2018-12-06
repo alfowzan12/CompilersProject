@@ -1,0 +1,5 @@
+Program a2018;
+               /*This program computes and prints the value of an expression */
+         Var
+                     //declare variables
+		ab1,             cd,              e33a,
