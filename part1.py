@@ -9,8 +9,9 @@ def readFile(filePath):
 
 def removeSpaces(lines):
     new_line = lines.strip()
-    re.sub(' +',' ',new_line)
+    new_line = re.sub(' +',' ',new_line)
     print("new line ",i ,"!" ,new_line)
+
 
 
 filePath = "/Users/faresalfowzan/Desktop/CSUF/323/Part1/test.txt"
@@ -20,7 +21,3 @@ for line in text:
     i = i + 1
     print("Line " ,i , ": ",line)
     removeSpaces(line)
-
-
-string = re.sub(' +',' ','The     quick brown    fox')
-print(string)
