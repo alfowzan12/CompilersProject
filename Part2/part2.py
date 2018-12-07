@@ -22,6 +22,8 @@ def writingFile(lines ,new_filePath):
             star = False
         if (token == "show" and star == True):
             show = True
+        else :
+            show = False
             for showToken in head:
 
                 if (showToken == "("):
@@ -31,7 +33,9 @@ def writingFile(lines ,new_filePath):
                     new_list.append("(" + showToken + ")")
                     new_line = "".join(new_list)
                     f.write(new_line + "\n")
-        if(star == True and token != "begin"):
+                    break
+        if(star == True and token != "begin" and show == False):
+            print(">>>>>>>>>>>  ","".join(head))
             f.write("".join(head) + "\n")
             break
 
