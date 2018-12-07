@@ -1,0 +1,8 @@
+ab1=3
+cd=4
+e33a=5
+print(ab1)
+show(ab1)
+d18=ab1*(cd+2*e33a)
+print(d18)
+show(d18)
