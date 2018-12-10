@@ -17,21 +17,36 @@ def removeSpaces(lines, newTextPath):
     head, sep, tail = lines.partition('//')
     new_line = head.strip()
     new_line = re.sub(' +',' ',new_line)
+    new_line = new_line.replace(" ", "")
+    new_line = new_line.replace("/*", "/* ")
+    new_line = new_line.replace("*/", " */")
+    new_line = new_line.replace("," , " , ")
+    new_line = new_line.replace("(" , " ( ")
+    new_line = new_line.replace("=", " = ")
+    new_line = new_line.replace("+", " + ")
+    new_line = new_line.replace(";", " ;")
+    new_line = new_line.replace(")", " ) ")
+    new_line = new_line.replace("-", " - ")
+    new_line = new_line.replace(":", " : ")
+    new_line = new_line.replace("program", "program ")
+    print(new_line)
+
+
     f = open(newTextPath, "a")
     new_line = new_line.split()
     new_list = []
+    print(new_line)
     for token in new_line:
-        print(star, " token:", token)
         if(token == "/*"):
             star = True
         if(token == "*/"):
             star = False
+
         if(star == False):
             if(token != "*/" and token != "/*"):
-                if("show" in token):
-                    print("HERE: ", token)
-                    token = token.replace("show(", "show (")
-                    print("AFTER: ", token)
+                token = token.replace("*", " * ")
+                token = token.replace("/", " / ")
+
                 new_list.append(token)
     new_line = " ".join(new_list)
     if(new_line != ""):
